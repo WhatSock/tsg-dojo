@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Practice Template Page</title>
+
+<link rel="stylesheet" type="text/css" href="../../_common/css/global.css" />
+<link rel="stylesheet" type="text/css" href="css/customize.css" />
+<link rel="stylesheet" type="text/css" href="css/calendar.css" />
+
+<script type="text/javascript" src="../../_common/js/dojo/dojo.js" data-dojo-config="async:true">
+// Load Dojo asynchronously.
+</script>
+
+<script type="text/javascript">
+
+// Configure AccDC modules and scripts to be loaded synchronously for flow control
+InitAccDC = [
+'../../../2 Accessible Component Modules/calendar_generator.min.js',
+'js/setup.js'
+];
+
+// Now load the AccDC API using the Dojo AMD Loader
+// The referenced AccDC API file is located at ../../_common/js/dojo/acc.dc.api.js
+require(['dojo/acc.dc.api']);
+
+</script>
+
+</head>
+<body>
+<div>
+
+<div class="intro tal">
+
+<div class="dateField">
+<label for="date">Set Date:</label>
+<input id="date" type="text" name="date" />
+<a href="#" id="dateIcon" class="accCalendar datePicker"><img
+src="img/calendar.png"
+alt="Calendar"
+title="Calendar"
+/></a>
+</div>
+
+
+<div class="desc">
+<p>
+The calendar is keyboard accessible.
+</p>
+<p><pre>
+When the calendar is opened, focus is set on the current date.
+Press the Left and Right arrow keys to navigate the row by week day.
+Press the Home and End keys to jump to the beginning or end of the current row.
+Press the Up and Down arrow keys to navigate between weeks on the same week day.
+Press the PageDown and PageUp keys to navigate backwards or forwards by month.
+Press Alt+PageDown and Alt+PageUp to navigate backwards or forwards by year.
+Press the Spacebar to edit a comment.
+Press the Enter key to activate the selected date.
+Press Escape to close the calendar without making a selection.
+Mouse users can click the desired date buttons as usual.
+</pre></p>
+<p>
+<a href="http://lnkd.in/HGCi3G">
+For advanced configuration including JSON callback instructions, click here.
+</a>
+</p>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

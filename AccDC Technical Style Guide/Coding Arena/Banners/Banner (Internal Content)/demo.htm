@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Practice Template Page</title>
+
+<link rel="stylesheet" type="text/css" href="../../_common/css/global.css" />
+<link rel="stylesheet" type="text/css" href="css/customize.css" />
+<link rel="stylesheet" type="text/css" href="css/banner.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Alfa+Slab+One" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Boogaloo" />
+
+<script type="text/javascript" src="../../_common/js/dojo/dojo.js" data-dojo-config="async:true">
+// Load Dojo asynchronously.
+</script>
+
+<script type="text/javascript">
+
+// Configure AccDC modules and scripts to be loaded synchronously for flow control
+InitAccDC = [
+'../../../2 Accessible Component Modules/banner_module.min.js',
+'js/setup.js'
+];
+
+// Now load the AccDC API using the Dojo AMD Loader
+// The referenced AccDC API file is located at ../../_common/js/dojo/acc.dc.api.js
+require(['dojo/acc.dc.api']);
+
+</script>
+
+</head>
+<body>
+<div>
+
+<div class="hd">
+<h1>
+Dynamic Banner (Internal)
+</h1>
+</div>
+
+<div class="intro tal">
+
+<!-- The onclick handler below simply references the Banner AccDC Object using the ID that was returned in the setup script, and invokes the object's 'open()' method to rerender the banner content.
+All such methods and properties are documented as part of the AccDC API, on the Core API tab at WhatSock.com. -->
+
+<button onclick="$A.reg[bannerId].open();" class="reloadBtn"> Reload Banner </button>
+
+</div>
+
+<div class="desc">
+<p>
+The banner is loaded from an external page using it's ID.
+</p>
+<p><pre>
+Activate the Submit button to close the banner.
+Activate the Reload button to rerender the banner content.
+</pre></p>
+</div>
+
+</div>
+
+<div class="hidden">
+
+<div id="ad-1">
+<div id="content">
+<div class="h2">Lost at sea?</div>
+<div class="h3">Relax - we've got your rudder.</div>
+<form>
+<input type="text" id="email" title="Email address..." />
+<input type="submit" id="submit" value="Guide me" />
+</form>
+</div>
+<div id="clouds">
+<ul id="cloud-group-1">
+<li class="cloud-1"></li>
+<li class="cloud-2"></li>
+<li class="cloud-3"></li>
+</ul>
+<ul id="cloud-group-2">
+<li class="cloud-1"></li>
+<li class="cloud-2"></li>
+<li class="cloud-3"></li>
+</ul>
+</div>
+<ul id="boat">
+<li>
+<div id="question-mark"></div>
+</li>
+</ul>
+<ul id="water">
+<li id="water-back"></li>
+<li id="water-front"></li>
+</ul>
+</div>
+
+</div>
+
+</body>
+</html>

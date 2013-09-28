@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Practice Template Page</title>
+
+<link rel="stylesheet" type="text/css" href="../../_common/css/global.css" />
+<link rel="stylesheet" type="text/css" href="css/customize.css" />
+
+<script type="text/javascript" src="../../_common/js/dojo/dojo.js" data-dojo-config="async:true">
+// Load Dojo asynchronously.
+</script>
+
+<script type="text/javascript">
+
+// Configure AccDC modules and scripts to be loaded synchronously for flow control
+InitAccDC = [
+'../../../2 Accessible Component Modules/carousel_module.min.js',
+'js/setup.js'
+];
+
+// Now load the AccDC API using the Dojo AMD Loader
+// The referenced AccDC API file is located at ../../_common/js/dojo/acc.dc.api.js
+require(['dojo/acc.dc.api']);
+
+</script>
+
+</head>
+<body>
+<div>
+
+<div class="intro tac">
+
+<div id="carouselId"></div>
+
+<div class="tal">
+<button id="toggleBtn">
+Toggle Slideshow
+</button>
+</div>
+
+<div class="desc">
+<p>
+The slideshow controls are keyboard accessible.
+</p>
+<p><pre>
+Press Tab and Shift+Tab to navigate between buttons, and press Enter to activate.
+Mouse users can click the desired buttons as usual.
+</pre></p>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>
