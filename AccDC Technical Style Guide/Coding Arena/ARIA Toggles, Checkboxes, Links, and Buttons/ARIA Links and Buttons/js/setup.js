@@ -39,7 +39,7 @@ $A.bind(window, 'load', function(){
 
 	// Set the HelpIcon IMG ARIA Link
 
-	var helpIcon = new $A.Toggle('helpIconId',
+	var helpIcon = new $A.Toggle('helpIcon',
 					{
 					noToggle: true,
 					callback: function(){
