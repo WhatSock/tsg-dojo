@@ -51,7 +51,7 @@ $A.bind(window, 'load', function(){
 							$A.addClass(this, 'active');
 
 							// Get the XML node that matches the ID attribute of the currently triggered element
-							var xNode = $A.query('*[id="' + this.id + '"]', dc.top.xmlTop)[0],
+							var xNode = $A.query('#' + this.id, dc.top.xmlDocument)[0],
 
 							// Then store the 'load' attribute value set on this XML node
 							loadVal = xNode.attributes.getNamedItem('load').value;
@@ -61,7 +61,6 @@ $A.bind(window, 'load', function(){
 
 							// Now load the page content specified in loadVal and put it within the container with id="book"
 							$A.load('#book', loadVal, function(responseText, textStatus, XMLHttpRequest){
-
 								// After the new content is loaded, do the following:
 
 								// Confirm that processing is complete by announcing a status message to screen reader users

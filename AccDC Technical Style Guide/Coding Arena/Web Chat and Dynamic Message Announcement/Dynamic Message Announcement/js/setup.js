@@ -1,6 +1,6 @@
 $A.bind(window, 'load', function(){
 
-	$A.bind('#opt1, #opt2, #opt3, #opt4', 'change click', function(ev){
+	$A.bind('#opt1, #opt2, #opt3, #opt4', 'change', function(ev){
 
 		var quantity = 0, subtotal = 0.00;
 
