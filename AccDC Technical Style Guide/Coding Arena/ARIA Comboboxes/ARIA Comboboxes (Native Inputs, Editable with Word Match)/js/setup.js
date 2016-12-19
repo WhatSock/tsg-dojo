@@ -1,5 +1,13 @@
 $A.bind(window, 'load', function(){
 
+	// Create an override function to normalize the scrollIntoView animation functionality
+	var scrollIntoViewOverride = function(optionNode, cbInstance){
+		// cbInstance.listboxNode is the parent role="listbox" container element
+		require(["dojo/window"], function(win){
+			win.scrollIntoView(optionNode);
+		});
+	};
+
 	var search = function(s){
 		if (!s)
 			return;
@@ -10,6 +18,7 @@ $A.bind(window, 'load', function(){
 
 	// Create a new ARIA Combobox instance
 	var myHardwareCombobox = new $A.Combobox($A.getEl('devicesId'), $A.getEl('hardwareEdit'));
+	myHardwareCombobox.scrollIntoView = scrollIntoViewOverride;
 
 	// Disable auto population of default value
 	myHardwareCombobox.setDefault(false);
