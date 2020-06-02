@@ -2,9 +2,16 @@ $A.bind(window, "load", function() {
   // Create an override function to normalize the scrollIntoView animation functionality
   var scrollIntoViewOverride = function(optionNode, cbInstance) {
     // cbInstance.listboxNode is the parent role="listbox" container element
-    require(["dojo/window"], function(win) {
-      win.scrollIntoView(optionNode);
-    });
+    if (cbInstance.listboxNode != cbInstance.listboxNodeLast) {
+      cbInstance.listboxNodeLast = cbInstance.listboxNode;
+      cbInstance.myScroller = zenscroll.createScroller(
+        cbInstance.listboxNode,
+        200,
+        0
+      );
+    }
+
+    if (cbInstance.myScroller) cbInstance.myScroller.center(optionNode);
   };
 
   // Create a new ARIA Combobox instance
@@ -20,6 +27,12 @@ $A.bind(window, "load", function() {
   // Use substring match instead of default left-string match
   myAuthorCombobox.setSubstringMatch(true);
   myAuthorCombobox.setCharMin(2);
+
+  // Enable full listbox content browsing from the keyboard when the down arrow key is pressed. (Applicable only when the value is empty.)
+  myAuthorCombobox.setShowAllIfEmpty(true);
+
+  // Enable auto saving of checked options, even when typing to narrow the filtered list of options at the same time.
+  myAuthorCombobox.setAutoSaveIfChecked(true);
 
   // Set CSS autopositioning relative to the triggering element.
   // Accepted AccDC API values between 0-disabled-default and 12
